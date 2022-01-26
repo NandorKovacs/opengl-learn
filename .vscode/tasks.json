@@ -11,7 +11,7 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}",
+        "${fileDirname}/${fileBasenameNoExtension}.exe",
         "-lglfw3",
         "-lX11",
         "-lXrandr",
