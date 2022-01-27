@@ -44,6 +44,7 @@ void init(GLFWwindow* window){
 
 void display(GLFWwindow* window, double current_time) {
   glUseProgram(renderingProg);
+  glPointSize(30.0f);
   glDrawArrays(GL_POINTS, 0, 1);
 }
 
