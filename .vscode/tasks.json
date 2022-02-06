@@ -22,7 +22,8 @@
         "-lGL",
         "-lpthread",
         "-ldl",
-        "-lGLEW"
+        "-lGLEW",
+        "-lGLU"
       ],
       "options": {
         "cwd": "${fileDirname}"
