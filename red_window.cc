@@ -14,8 +14,8 @@ int main(int argc, char* argv[]) {
   if (!glfwInit()) {
     exit(EXIT_FAILURE);
   }
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  glfwWindowHint(GLFW_VERSION_MAJOR, 4);
+  glfwWindowHint(GLFW_VERSION_MINOR, 3);
   GLFWwindow* window = glfwCreateWindow(600, 600, "red_window", NULL, NULL);
   glfwMakeContextCurrent(window);
   if(glewInit() != GLEW_OK) {

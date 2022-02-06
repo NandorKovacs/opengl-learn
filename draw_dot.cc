@@ -10,15 +10,15 @@ GLuint vao[numVAOs];
 
 GLuint createShaderProg() {
   const char* vshaderSource =
-    "#version 430 \n"
-    "void main(void) \n"
-    "{gl_Position = vec4(0.0, 0.0, 0.0, 1.0); }";
+      "#version 430 \n"
+      "void main(void) \n"
+      "{gl_Position = vec4(0.0, 0.0, 0.0, 1.0); }";
 
   const char* fshaderSource =
-    "#version 430 \n"
-    "out vec4 color; \n"
-    "void main(void) \n"
-    "{ color = vec4(0.0, 0.0, 1.0, 1.0); }";
+      "#version 430 \n"
+      "out vec4 color; \n"
+      "void main(void) \n"
+      "{ color = vec4(0.0, 0.0, 1.0, 1.0); }";
 
   GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
   GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -36,7 +36,7 @@ GLuint createShaderProg() {
   return vfProgram;
 }
 
-void init(GLFWwindow* window){
+void init(GLFWwindow* window) {
   renderingProg = createShaderProg();
   glGenVertexArrays(numVAOs, vao);
   glBindVertexArray(vao[0]);
@@ -52,11 +52,11 @@ int main(int argc, char* argv[]) {
   if (!glfwInit()) {
     exit(EXIT_FAILURE);
   }
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  glfwWindowHint(GLFW_VERSION_MAJOR, 4);
+  glfwWindowHint(GLFW_VERSION_MINOR, 3);
   GLFWwindow* window = glfwCreateWindow(600, 600, "red_window", NULL, NULL);
   glfwMakeContextCurrent(window);
-  if(glewInit() != GLEW_OK) {
+  if (glewInit() != GLEW_OK) {
     exit(EXIT_FAILURE);
   }
   glfwSwapInterval(1);
