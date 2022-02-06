@@ -1,19 +1,34 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include <fstream>
 #include <iostream>
+#include <sstream>
+#include <string>
 
 #define numVAOs 1
 
 GLuint renderingProg;
 GLuint vao[numVAOs];
 
+// std::string readShaderSource(std::string fileName) {
+//   std::ifstream ifs{fileName};
+//   std::ostringstream oss;
+
+//   while (ifs) {
+//     std::string s;
+//     getline(ifs, s);
+//     oss << s << std::endl;
+//   }
+//   return oss.str();
+// }
+
 GLuint createShaderProg() {
   const char* vshaderSource =
       "#version 430 \n"
       "void main(void) \n"
       "{gl_Position = vec4(0.0, 0.0, 0.0, 1.0); }";
-
+  // std::string strFshaderSource = readShaderSource("fshader-box_border.glsl");
   const char* fshaderSource =
       "#version 430 \n"
       "out vec4 color; \n"
